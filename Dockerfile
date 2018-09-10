@@ -2,11 +2,14 @@
 # Dockerfile for youtube-dl
 #
 
-FROM alpine
+FROM alpine:latest
 #MAINTAINER madishe <madishe@gmail.com>
 
+#Need to update alpine first
 RUN apk update
 RUN apk upgrade
+
+#Install required stuff
 RUN set -xe \
     && apk add --no-cache ca-certificates \
                           ffmpeg \
